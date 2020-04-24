@@ -25,6 +25,7 @@ def match_symbols(symbols):
         "(":")"
     }
     openers = symbol_pairs.keys()
+    closers = symbol_pairs.values()
     symbol_stack = Stack()
 
     i = 0
@@ -33,7 +34,7 @@ def match_symbols(symbols):
         
         if symbol in openers:
             symbol_stack.push(symbol)
-        else: # The symbol is a closer
+        elif symbol in closers: 
             if symbol_stack.is_empty():
                 return False
             else:
@@ -44,4 +45,5 @@ def match_symbols(symbols):
     if symbol_stack.is_empty():
         return True
 
-print(match_symbols("{[()]}())"))
+print(match_symbols("{[(dgagdjah)hgg]}(hfahf)"))
+print(match_symbols("{[()hgg)]}(hfahf))"))
