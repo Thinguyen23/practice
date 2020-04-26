@@ -1,7 +1,8 @@
 import random
 
 # Printer algo
-class PrintQueue():
+class PrintQueue:
+
     def __init__(self):
         self.items = []
 
@@ -27,7 +28,7 @@ class PrintQueue():
     def is_empty(self):
         return self.items == []
     
-class Job():
+class Job:
     def __init__(self):
         self.pages = random.randint(1,11)
 
@@ -41,7 +42,7 @@ class Job():
             return True
         return False
 
-class Printer():
+class Printer:
     def __init__(self):
         self.current_job = None
     
